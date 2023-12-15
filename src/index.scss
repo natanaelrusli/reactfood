@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+/* || General Styling */
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#29251c, #2c2306);
+  color: #d9e2f1;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0;
+  color: #ffc404;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+/* ... */
+
+/* || Button Styling */
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ... */
+
+/* || Header and Main Navigation */
+
+#main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 10%;
+}
+
+#main-header #title {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#main-header #title img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid #ffc404;
+}
+
+#main-header #nav-right {
+  font-size: 1.5rem;
+  font-family: "Lato", sans-serif;
+  color: #ffc404;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#main-header #nav-right:hover {
+  color: #785c00;
+}
+
+/* … */
+
+#meals {
+  width: 90%;
+  max-width: 70rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+}
+
+.meal-item {
+  width: 100%;
+  background-color: #0e0e0d;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.meal-item:hover {
+  cursor: pointer;
+  transition: all 0.5s;
+  transform: translateY(-10px);
+}
+
+.meal-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.meal-item:hover img {
+  transform: scale(1.1) translateY(-10px);
+  transition: transform 0.5s;
+}
+
+.meal-item__body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 10px;
+}
+
+.meal-item__body h3 {
+  margin: 0;
+}
+
+.meal-item__price {
+  background-color: #242012;
+  color: #fdc103;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.meal-item__description {
+  text-align: center;
+  color: #979295;
+  margin-bottom: 18px;
+}
+
+.meal-item__actions {
+  margin-bottom: 12px;
+}
+
+.meal-item__actions button {
+  background-color: #fdc103;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.meal-item__actions button:hover {
+  background-color: #f9d55f;
+}
+
+/* || Modal */
+
+dialog {
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.5s;
+  transform: translateY(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+dialog[open] {
+  opacity: 1;
+  transition: all 0.5s;
+  transform: translateY(0px);
+  pointer-events: inherit;
+}
+
+dialog.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog.modal {
+  border: none;
+  padding: 20px;
+  border-radius: 18px;
+  background-color: rgb(255, 210, 106);
+  outline: none;
+}
+
+dialog.modal h1 {
+  color: #000;
+}
+
+/* … */
+
+/* || Cart Form Styling */
+
+.cart-form {
+  width: 50vw;
+  min-width: 400px;
+
+  &__header {
+    h1 {
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      text-transform: none;
+    }
+  }
+
+  &__data-list {
+    margin: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  &__data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 0.1px solid darken(rgb(255, 210, 106), 20);
+  }
+
+  &__data-quantity {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 1.1rem;
+  }
+
+  &__data-quantity button {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: #f9d55f;
+  }
+
+  &__total-price,
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__total-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  &__actions {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  &__close-btn {
+    background-color: transparent;
+  }
+
+  &__close-btn:hover {
+    color: lighten($color: #785c00, $amount: 10);
+  }
+
+  &__checkout-btn {
+    background-color: #353535;
+    color: #f9d55f;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  &__checkout-btn:hover {
+    background-color: darken($color: #785c00, $amount: 5);
+  }
+}
+
+/* … */

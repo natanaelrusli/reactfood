@@ -1,0 +1,96 @@
+[
+  {
+    "customer": {
+      "email": "natanael@email.com",
+      "name": "nata",
+      "street": "paseban dalam",
+      "postal-code": "10440",
+      "city": "Jakarta Pusat"
+    },
+    "items": {
+      "id": "m2",
+      "name": "Margherita Pizza",
+      "price": "12.99",
+      "description": "A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.",
+      "image": "images/margherita-pizza.jpg"
+    }
+  },
+  {
+    "customer": {
+      "email": "john.doe@example.com",
+      "name": "John Doe",
+      "street": "123 Main St",
+      "postal-code": "12345",
+      "city": "Sample City"
+    },
+    "items": [
+      {
+        "id": "m1",
+        "name": "Sample Meal",
+        "price": "9.99",
+        "description": "A delicious sample meal",
+        "image": "path/to/image.jpg"
+      },
+      {
+        "id": "m2",
+        "name": "Another Sample Meal",
+        "price": "12.99",
+        "description": "Another tasty sample meal",
+        "image": "path/to/another-image.jpg"
+      }
+    ],
+    "id": "728.9883350496602"
+  },
+  {
+    "customer": {
+      "email": "john.doe@example.com",
+      "name": "John Doe",
+      "street": "123 Main St",
+      "postal-code": "12345",
+      "city": "Sample City"
+    },
+    "items": [
+      {
+        "id": "m1",
+        "name": "Sample Meal",
+        "price": "9.99",
+        "description": "A delicious sample meal",
+        "image": "path/to/image.jpg"
+      },
+      {
+        "id": "m2",
+        "name": "Another Sample Meal",
+        "price": "12.99",
+        "description": "Another tasty sample meal",
+        "image": "path/to/another-image.jpg"
+      }
+    ],
+    "id": "33.004690902925574"
+  },
+  {
+    "customer": {
+      "email": "john.doe@example.com",
+      "name": "John Doe",
+      "street": "123 Main St",
+      "postal-code": "12345",
+      "city": "Sample City"
+    },
+    "items": [
+      {
+        "id": "m1",
+        "name": "Sample Meal",
+        "price": "9.99",
+        "description": "A delicious sample meal",
+        "image": "path/to/image.jpg"
+      },
+      {
+        "id": "m2",
+        "name": "Another Sample Meal",
+        "price": "12.99",
+        "description": "Another tasty sample meal",
+        "image": "path/to/another-image.jpg"
+      }
+    ],
+    "id": "713.748576273072"
+  }
+]
