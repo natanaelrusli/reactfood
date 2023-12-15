@@ -3,6 +3,7 @@ import { create } from "zustand";
 export const useCartStore = create((set) => ({
   items: [],
   totalPrice: 0,
+  totalQuantity: 0,
   addItem: (item) =>
     set((state) => {
       const existingItemIndex = state.items.findIndex((i) => i.id === item.id);
@@ -16,6 +17,7 @@ export const useCartStore = create((set) => ({
           totalPrice: (
             parseFloat(state.totalPrice) + parseFloat(item.price)
           ).toFixed(2),
+          totalQuantity: state.totalQuantity + 1,
         };
       } else {
         return {
@@ -23,6 +25,7 @@ export const useCartStore = create((set) => ({
           totalPrice: (
             parseFloat(state.totalPrice) + parseFloat(item.price)
           ).toFixed(2),
+          totalQuantity: state.totalQuantity + 1,
         };
       }
     }),
@@ -44,6 +47,7 @@ export const useCartStore = create((set) => ({
           totalPrice: (
             parseFloat(state.totalPrice) - parseFloat(existingItem.price)
           ).toFixed(2),
+          totalQuantity: state.totalQuantity - 1,
         };
       }
 

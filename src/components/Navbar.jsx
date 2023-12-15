@@ -3,7 +3,7 @@ import logo from "../assets/logo.jpg";
 import { useCartStore } from "../store/cartStore";
 
 export default function Navbar({ handleShowCart }) {
-  const { items } = useCartStore();
+  const { totalQuantity } = useCartStore();
 
   return (
     <div id='main-header'>
@@ -13,7 +13,7 @@ export default function Navbar({ handleShowCart }) {
       </div>
 
       <div onClick={handleShowCart} id='nav-right'>
-        Cart ({items?.length})
+        Cart ({totalQuantity})
       </div>
     </div>
   );
