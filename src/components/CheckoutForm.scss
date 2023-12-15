@@ -1,0 +1,93 @@
+.checkout-form {
+  width: 35vw;
+  padding: 20px 0;
+  transition: all 1s;
+  animation: fadeIn 1s;
+  transform: translateX(-100);
+
+  &__header {
+    font-size: 1.3rem;
+    letter-spacing: 0.6px;
+    text-transform: none;
+    font-weight: 900;
+  }
+
+  &__amount {
+    font-weight: 100;
+    font-size: 0.9rem;
+    margin: 10px 0;
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    min-width: 200px;
+    margin-bottom: 10px;
+  }
+
+  &__two-cols {
+    display: flex;
+    gap: 10px;
+
+    input {
+      width: 180px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+
+    .btn {
+      padding: 8px;
+    }
+
+    button.back {
+      background-color: transparent;
+      border-radius: 8px;
+
+      &:hover {
+        color: lighten($color: #000000, $amount: 40);
+      }
+    }
+
+    button.submit {
+      background-color: #9a7601;
+      padding: 0 30px;
+      color: #fff;
+
+      &:hover {
+        background-color: lighten($color: #9a7601, $amount: 10);
+      }
+    }
+  }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  label {
+    font-weight: bold;
+  }
+
+  input {
+    padding: 5px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}

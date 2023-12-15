@@ -1,6 +1,6 @@
 import { useCartStore } from "../store/cartStore";
 
-export default function CartForm({ onClose }) {
+export default function CartForm({ onClose, onSubmit }) {
   const { items, totalPrice, addItem, decreaseItem } = useCartStore();
 
   return (
@@ -45,7 +45,9 @@ export default function CartForm({ onClose }) {
         <button className='cart-form__close-btn' onClick={onClose}>
           Close
         </button>
-        <button className='cart-form__checkout-btn'>Go to Checkout</button>
+        <button className='cart-form__checkout-btn' onClick={onSubmit}>
+          Go to Checkout
+        </button>
       </div>
     </div>
   );

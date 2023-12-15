@@ -183,11 +183,18 @@ dialog.modal::backdrop {
 }
 
 dialog.modal {
+  width: fit-content;
   border: none;
   padding: 20px;
   border-radius: 18px;
   background-color: rgb(255, 210, 106);
   outline: none;
+  transition: width 1s;
+}
+
+dialog.modal .content {
+  width: 100%; /* Or any initial width you want */
+  transition: width 1s;
 }
 
 dialog.modal h1 {
@@ -201,6 +208,8 @@ dialog.modal h1 {
 .cart-form {
   width: 50vw;
   min-width: 400px;
+  padding: 30px 10px;
+  transition: all 1s;
 
   &__header {
     h1 {
