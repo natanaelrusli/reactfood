@@ -1,24 +1,25 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import MealItem from "./components/MealItem";
 import Navbar from "./components/Navbar";
 import CartFormModal from "./components/CartFormModal";
+import useHttp from "./hooks/useHttp";
+
+const requestConfig = {};
 
 function App() {
-  const [meals, setMeals] = useState([]);
+  const {
+    data: meals,
+    isLoading,
+    error,
+  } = useHttp("http://localhost:3000/meals", requestConfig, []);
   const modal = useRef(null);
-
-  async function getMeals() {
-    const response = await fetch("http://localhost:3000/meals");
-    const data = await response.json();
-    setMeals(data);
-  }
-
-  useEffect(() => {
-    getMeals();
-  }, []);
 
   function handleShowCartModal() {
     modal.current.open();
+  }
+
+  if (isLoading) {
+    return <p>Fetching the meals...</p>;
   }
 
   return (
